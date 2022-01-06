@@ -1,9 +1,15 @@
 const express = require('express')
 const router = express.Router()
 
+const sessionRouter = require('./session.js')
+const userRouter = require('./users.js')
+
 const asyncHandler = require('express-async-handler')
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.js')
 const { User } = require('../../db/models')
+
+router.use('/session', sessionRouter)
+router.use('/users', userRouter)
 
 // test middleware
 // router.get('/require-auth', requireAuth, (req, res) => {
@@ -24,10 +30,6 @@ const { User } = require('../../db/models')
 //     return res.json(req.user)
 // })
 
-router.get('/', (req,res) => {
-    res.cookie('XSRF-TOKEN', req.csrfToken())
-    res.send('Hello World')
-})
 
 router.post('/test', (req, res) => {
     res.json({ requestBody: req.body })
