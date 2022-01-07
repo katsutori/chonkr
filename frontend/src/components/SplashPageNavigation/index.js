@@ -15,7 +15,7 @@ function SplashNavigation() {
     return (
         <div className='main'>
             <div className='logo'>
-                <img className='logo-image' src='https://sept21aa.games/img/logo.png' />
+                <a href='/'><img className='logo-image' src='https://sept21aa.games/img/logo.png' /></a>
             </div>
             <div className='splash-search'>
                 <form onSubmit={handleSearch}>

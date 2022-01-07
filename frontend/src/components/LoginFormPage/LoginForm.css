@@ -3,12 +3,13 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -213px;
+    margin-top: -325px;
     margin-left: -176px;
     align-items: center;
     justify-content: center;
-    background-color: pink;
-    height: 426px;
+    background-color: white;
+    height: 100%;
+    max-height: 480px;
     width: 352px;
     z-index: 100;
     border-radius: 5px;
@@ -16,6 +17,14 @@
 
 .login-form {
     width: 85%;
+}
+
+.login-logo {
+    display: flex;
+    align-items: top;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: -25px;
 }
 
 .title {
@@ -27,6 +36,21 @@
     font-family: Proxima Nova,Helvetica,sans-serif;
     font-size: 19px;
     color: #212124;
+}
+
+.sign-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: -15px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 13px;
+}
+
+.sign-up-link {
+    text-decoration: none;
+    color: #0364cb;
 }
 
 .label-container {
@@ -70,4 +94,8 @@
     margin-top: 35px;
     margin-bottom: 45px;
 
+}
+
+.i-need-a-damn-space {
+    padding-right: 2px;
 }
