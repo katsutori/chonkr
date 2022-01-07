@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
+import logo from '../../img/logo.png'
 import './SplashPageNavigation.css'
 
 
@@ -15,7 +16,7 @@ function SplashNavigation() {
     return (
         <div className='main'>
             <div className='logo'>
-                <a href='/'><img className='logo-image' src='https://sept21aa.games/img/logo.png' /></a>
+                <a href='/'><img className='logo-image' src={logo} /></a>
             </div>
             <div className='splash-search'>
                 <form onSubmit={handleSearch}>
