@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as sessionActions from '../../store/session'
 import { useDispatch, useSelector } from 'react-redux'
 import { Redirect, Link } from 'react-router-dom'
+import favicon from '../../img/favicon.png'
 import './SignupForm.css'
 
 function SignupFormPage() {
@@ -32,7 +33,7 @@ function SignupFormPage() {
     return (
         <div className='form-main-signup'>
             <form className='login-form' onSubmit={handleSubmit}>
-                <div className='login-logo'><img src='https://sept21aa.games/img/favicon.png'/></div>
+                <div className='login-logo'><img src={favicon}/></div>
                 <div className='title'>Sign up for Chonkr</div>
                 <ul>
                     {errors.map((error, i) => <li key={i}>{error}</li>)}
