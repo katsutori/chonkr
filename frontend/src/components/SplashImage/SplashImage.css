@@ -1,7 +1,9 @@
+/* @import url('../../img/splash.jpg'); */
+
 .main-container {
     height: 90vh;
     width: 100%;
-    background-image: url('https://sept21aa.games/img/splash.jpg');
+    background-image: url('../../img/splash.jpg');
     background-position: center;
     background-size: cover;
     display: flex;
