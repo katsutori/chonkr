@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/katsutori/chonkr/issues"
   },
-  "homepage": "https://github.com/katsutori/chonkr#readme"
+  "homepage": "https://github.com/katsutori/chonkr#readme",
+  "proxy": "https://cors-anywhere.herokuapp.com/"
 }
