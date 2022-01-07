@@ -1,0 +1,16 @@
+.footer {
+    position: absolute;
+    height: 56px;
+    bottom: 0;
+    margin-top: -10px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-size: 12px;
+    z-index: 100;
+}

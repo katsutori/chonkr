@@ -5,6 +5,8 @@ import { Route, Switch } from 'react-router-dom'
 
 import LoginFormPage from './components/LoginFormPage';
 import SignupFormPage from './components/SignupFormPage';
+import SplashPage from './components/SplashPage';
+import HomeApp from './components/App';
 import * as sessionActions from './store/session'
 
 function App() {
@@ -17,6 +19,12 @@ function App() {
 
   return isLoaded  && (
     <Switch>
+      <Route exact path='/'>
+        <HomeApp />
+      </Route>
+      <Route path='/welcome'>
+        <SplashPage />
+      </Route>
       <Route path='/login'>
           <LoginFormPage />
       </Route>

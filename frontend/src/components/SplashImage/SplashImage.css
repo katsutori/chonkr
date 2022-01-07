@@ -1,0 +1,55 @@
+.main-container {
+    height: 90vh;
+    width: 100%;
+    background-image: url('https://sept21aa.games/img/splash.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.splash-text {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    position: relative;
+    margin-top: -100px;
+    height: 300px;
+    max-width: 700px;
+    color: white;
+    text-align: center;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+}
+
+.splash-button {
+    color: rgba(0,0,0,.8);
+    background-color: white;
+    transition: color .15s ease-in-out;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 24px;
+    font-weight: 800;
+    height: 70px;
+    width: 225px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    margin-left: 5px;
+    margin-right: 25px;
+    text-decoration: none;
+
+}
+
+.splash-button:hover {
+    opacity: 1;
+    color: rgba(0,0,0,.5);
+    cursor: pointer;
+}
+
+.h1-splash {
+    font-size: 56px;
+}

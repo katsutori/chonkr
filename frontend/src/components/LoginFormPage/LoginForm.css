@@ -1,0 +1,73 @@
+.form-main {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -213px;
+    margin-left: -176px;
+    align-items: center;
+    justify-content: center;
+    background-color: pink;
+    height: 426px;
+    width: 352px;
+    z-index: 100;
+    border-radius: 5px;
+}
+
+.login-form {
+    width: 85%;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 19px;
+    color: #212124;
+}
+
+.label-container {
+    width: 100%;
+}
+
+.login-label {
+    margin-bottom: 10px;
+    width: 100%;
+    height: 55px;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, .25);
+    box-sizing: border-box;
+    padding-left: 5px;
+}
+
+.login-label:focus {
+    outline: none;
+    border: 1px solid #0364cb;
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+.button-container button {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    cursor: pointer;
+    background-color: #0364cb;
+    color: white;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-top: 35px;
+    margin-bottom: 45px;
+
+}
