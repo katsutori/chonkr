@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import Masonry from 'react-responsive-masonry'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
 
@@ -29,9 +30,11 @@ function HomeApp() {
     return (
         <div>
             <h1>You are logged in</h1>
+            <Masonry columnsCount={3} gutter={4}>
             {photos?.map(({id, url}) => (
                 <img key={id} src={url} />
                 ))}
+            </Masonry>
             <form onSubmit={handleLogout}>
                 <button type='submit'>Logout</button>
             </form>
