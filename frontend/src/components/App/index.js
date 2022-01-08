@@ -32,6 +32,7 @@ function HomeApp() {
     return (
         <div>
             <h1>You are logged in</h1>
+            <h2>There are lots of rabbits here.</h2>
             <Masonry columnsCount={3} gutter={4}>
             {photos?.map(({id, url}) => (
                 <img className='photo-spread' key={id} src={url} />
