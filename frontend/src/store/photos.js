@@ -1,3 +1,5 @@
+import { csrfFetch } from "./csrf"
+
 const LOAD_PHOTOS = 'photos/LOAD'
 
 export const loadPhotos = photos => {
@@ -8,7 +10,9 @@ export const loadPhotos = photos => {
 }
 
 export const getAllPhotos = () => async dispatch => {
-    const response = await fetch(`/api/photos`)
+    const response = await csrfFetch(`/api/photos`, {
+        method: 'GET'
+    })
 
     if (response.ok) {
         const photos = await response.json()
