@@ -3,14 +3,28 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -320px;
+    margin-top: -300px;
     margin-left: -176px;
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 100%;
-    max-height: 600px;
+    height: 600px;
     width: 352px;
     z-index: 100;
     border-radius: 5px;
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: .3s;
+    z-index: 150;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
