@@ -48,6 +48,7 @@ module.exports = (sequelize, DataTypes) => {
 
   User.associate = function(models) {
     // associations can be defined here
+    User.hasMany(models.Photo, {foreignKey: 'userId', onDelete: 'CASCADE', hooks: true})
   };
 
   User.prototype.toSafeObject = function() {
