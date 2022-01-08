@@ -6,6 +6,8 @@ import * as sessionActions from '../../store/session'
 
 import { getAllPhotos } from '../../store/photos'
 
+import './HomeApp.css'
+
 function HomeApp() {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
@@ -32,7 +34,7 @@ function HomeApp() {
             <h1>You are logged in</h1>
             <Masonry columnsCount={3} gutter={4}>
             {photos?.map(({id, url}) => (
-                <img key={id} src={url} />
+                <img className='photo-spread' key={id} src={url} />
                 ))}
             </Masonry>
             <form onSubmit={handleLogout}>
