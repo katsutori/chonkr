@@ -1,14 +1,24 @@
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Route, Switch } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
+
+import { getAllPhotos } from '../../store/photos'
 
 function HomeApp() {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
+    const photos = useSelector(state => state.photoState.entries)
+    console.log(photos)
+
+    useEffect(() => {
+        dispatch(getAllPhotos())
+    }, [dispatch])
 
     if(!sessionUser) return (
         <Redirect to='/welcome' />
     )
+    console.log('hello', photos)
 
     const handleLogout = (e) => {
         e.preventDefault()
@@ -19,6 +29,9 @@ function HomeApp() {
     return (
         <div>
             <h1>You are logged in</h1>
+            {photos?.map(({id, url}) => (
+                <img key={id} src={url} />
+                ))}
             <form onSubmit={handleLogout}>
                 <button type='submit'>Logout</button>
             </form>
