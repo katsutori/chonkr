@@ -1,0 +1,34 @@
+
+.photo-spread {
+    max-width: 100%;
+    display: block;
+}
+
+figure {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+figure > img {
+    grid-row: 1 / -1;
+    grid-column: 1;
+    border-radius: 5px;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
+  }
+
+
+.outside-grid {
+    column-count: 4;
+    column-gap: 10px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+}

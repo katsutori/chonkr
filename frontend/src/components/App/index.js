@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Masonry from 'react-responsive-masonry'
 import { Redirect, Route, Switch } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
 
 import { getAllPhotos } from '../../store/photos'
+import HomeHeader from './Header'
+import Explore from './Explore'
+import Footer from '../Footer'
 
 import './HomeApp.css'
+
 
 function HomeApp() {
     const dispatch = useDispatch()
@@ -30,20 +33,11 @@ function HomeApp() {
 
     return (
         <div className='logged-home'>
+            <HomeHeader />
             <h1>You are logged in</h1>
             <h2>There are lots of rabbits here.</h2>
-            <div className='outside-grid'>
-                {photos?.map((photo, idx) => (
-
-                    <figure  key={idx}>
-                        <img className='photo-spread' src={photo.url} />
-                    </figure>
-
-                ))}
-            </div>
-            <form onSubmit={handleLogout}>
-                <button type='submit'>Logout</button>
-            </form>
+            <Explore photos={photos} />
+            <Footer />
         </div>
     )
 }
