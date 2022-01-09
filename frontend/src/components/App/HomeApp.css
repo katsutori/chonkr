@@ -1,3 +1,30 @@
+.logged-home {
+    background-color: black;
+    color: white;
+}
+
 .photo-spread {
-    width: 100%;
+    max-width: 100%;
+    display: block;
+}
+
+figure {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+figure > img {
+    grid-row: 1 / -1;
+    grid-column: 1;
+  }
+
+
+.outside-grid {
+    column-count: 4;
+    column-gap: 10px;
+    max-width: 1800px;
+    margin: auto;
 }
