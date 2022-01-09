@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Redirect, Route, Switch } from 'react-router-dom'
+import { Redirect, Route, Switch, NavLink, Link } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
 
 import { getAllPhotos } from '../../store/photos'
 import HomeHeader from './Header'
 import Explore from './Explore'
+import LoginFormPage from '../LoginFormPage'
 import Footer from '../Footer'
 
 import './HomeApp.css'
@@ -21,9 +22,9 @@ function HomeApp() {
     }, [dispatch])
 
 
-    if(!sessionUser) return (
-        <Redirect to='/welcome' />
-    )
+    // if(!sessionUser) return (
+    //     <Redirect to='/welcome' />
+    // )
 
     const handleLogout = (e) => {
         e.preventDefault()
@@ -33,11 +34,13 @@ function HomeApp() {
 
     return (
         <div className='logged-home'>
-            <HomeHeader />
             <h1>You are logged in</h1>
+
             <h2>There are lots of rabbits here.</h2>
+
             <Explore photos={photos} />
-            <Footer />
+
+
         </div>
     )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { NavLink, Link } from 'react-router-dom'
+import { NavLink, Link, useHistory } from 'react-router-dom'
 
 import * as sessionActions from '../../../store/session'
 
@@ -15,6 +15,8 @@ function HomeHeader() {
     const sessionUser = useSelector(state => state.session.user)
     const [search, setSearch] = useState('')
 
+    const history = useHistory()
+
     const handleSearch = (e) => {
         e.preventDefault()
         alert('You need to make this work')
@@ -22,6 +24,7 @@ function HomeHeader() {
 
     const handleLogout = (e) => {
         e.preventDefault()
+        history.push('/')
         return dispatch(sessionActions.logout())
 
     }
@@ -29,7 +32,7 @@ function HomeHeader() {
     return (
         <div className='main'>
             <div className='logo'>
-                <a href='/'><img className='logo-image' src={logo} /></a>
+                <img className='logo-image' src={logo} />
             </div>
             <div className='splash-search'>
                 <form onSubmit={handleSearch}>
