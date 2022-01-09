@@ -94,8 +94,8 @@ function HomeApp() {
             <div className='outside-grid'>
                 {photos?.map((photo, idx) => (
 
-                    <figure>
-                        <img className='photo-spread' key={idx} src={photo.url} />
+                    <figure  key={idx}>
+                        <img className='photo-spread' src={photo.url} />
                     </figure>
 
                 ))}
