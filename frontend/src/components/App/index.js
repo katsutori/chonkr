@@ -12,61 +12,15 @@ function HomeApp() {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const photos = useSelector(state => state.photoState.entries)
-    console.log(photos)
-    const [load, setLoad] = useState(false)
-    const [first, setFirst] = useState([])
-    const [second, setSecond] = useState([])
-    const [third, setThird] = useState([])
-
-
 
     useEffect(() => {
         dispatch(getAllPhotos())
     }, [dispatch])
 
-    // if (photos.length > 1) {
-    //     const firstThird = []
-    //     if(photos){
-    //         for (let i = 0; i < photos.length; i += 3) {
-    //             firstThird.push(photos[i])
-
-    //         }
-    //         setFirst(firstThird)
-    //     }
-    //     const secondThird = []
-    //     if(photos){
-    //         for (let i = 1; i < photos.length; i += 3) {
-    //             secondThird.push(photos[i])
-
-    //         }
-    //         setSecond(secondThird)
-    //     }
-    //     const lastThird = []
-    //     if(photos){
-    //         for (let i = 2; i < photos.length; i += 3) {
-    //             lastThird.push(photos[i])
-
-    //         }
-    //         setThird(lastThird)
-    //     }
-    // }
-    // const firstThird = []
-
-    // useEffect(() => {
-    //     if(load){
-    //     for (let i = 0; i < photos.length; i += 3) {
-    //         firstThird.push(photos[i])
-    //     }
-    // }
-    //     setFirst(firstThird)
-    // }, [])
-
-
 
     if(!sessionUser) return (
         <Redirect to='/welcome' />
     )
-    console.log('hello', photos)
 
     const handleLogout = (e) => {
         e.preventDefault()
@@ -74,19 +28,6 @@ function HomeApp() {
 
     }
 
-
-
-    // const secondThird = []
-    // for (let i = 1; i < photos.length; i += 3) {
-    //     secondThird.push(photos[i])
-    // }
-
-    // const lastThird = []
-    // for (let i = 2; i < photos.length; i += 3) {
-    //     lastThird.push(photos[i])
-    // }
-    let firstThird;
-    let secondThird;
     return (
         <div className='logged-home'>
             <h1>You are logged in</h1>
