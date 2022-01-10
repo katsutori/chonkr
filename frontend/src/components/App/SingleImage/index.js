@@ -23,7 +23,8 @@ const PhotoDetail = () => {
             <h1>{single?.title}</h1>
             <p>{single?.description}</p>
             <p>{single?.dateTaken}</p>
-
+            {single?.userId === sessionUser?.id ? <button type='submit'>Delete</button>:<></>}
+            {single?.userId === sessionUser?.id ? <button type='submit'>Edit</button>:<></>}
         </div>
     )
 }
