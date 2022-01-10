@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
 import { uploadPhoto } from '../../../store/photos'
+import * as sessionActions from '../../../store/session'
 
 import './AddPhoto.css'
 
@@ -28,6 +29,8 @@ function AddPhoto() {
             description,
             dateTaken
         }
+
+        console.log(payload)
 
         const image = await dispatch(uploadPhoto(payload))
         console.log('hiiii', image)
