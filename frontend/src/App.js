@@ -10,6 +10,7 @@ import HomeApp from './components/App';
 import HomeHeader from './components/App/Header';
 import AddPhoto from './components/App/AddPhoto';
 import PhotoDetail from './components/App/SingleImage';
+import EditPhoto from './components/App/EditPhoto';
 import Footer from './components/Footer';
 import * as sessionActions from './store/session'
 
@@ -58,8 +59,11 @@ function App() {
         <Route path='/upload'>
           <AddPhoto />
         </Route>
-        <Route path='/photos/:id'>
+        <Route exact path='/photos/:id'>
           <PhotoDetail />
+        </Route>
+        <Route path='/photos/:id/edit'>
+          <EditPhoto />
         </Route>
         <Route>
           Page Not Found
