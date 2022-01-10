@@ -4,7 +4,7 @@ const asyncHandler = require('express-async-handler')
 const { check } = require('express-validator')
 const { handleValidationErrors } = require('../../utils/validation')
 
-const { Photo } = require('../../db/models')
+const { Photo, User } = require('../../db/models')
 
 const router = express.Router()
 
@@ -14,7 +14,6 @@ const validateUpload = [
         .withMessage('You need to provide a title.'),
     check('photoUrl')
         .exists({ checkFalsy: true })
-        .isURL()
         .withMessage('You need to provide a valid url.'),
     check('description')
         .exists({ checkFalsy: true})
@@ -27,7 +26,9 @@ const validateUpload = [
 ]
 
 router.get('/', asyncHandler(async (req, res) => {
-    const response = await Photo.findAll();
+    const response = await Photo.findAll({
+        include: [{model: User}]
+    });
     res.json(response)
 }))
 
