@@ -27,9 +27,22 @@ function AddPhoto() {
         }
     }, [])
 
+    useEffect(() => {
+        let errs = [];
+        if (!title) {
+            errs.push('You need to provide a title.')
+        }
+        if (!url.includes('http')) {
+            errs.push('You need to provide a valid image url.')
+        }
+        if (!description) {
+            errs.push('You need to provide a description for your Chonkr.')
+        }
+        setErrors(errs)
+    }, [title, url, description, dateTaken])
+
     const handleUpload = async (e) => {
         e.preventDefault()
-        setErrors([])
 
         let payload = {
             userId,
@@ -42,7 +55,7 @@ function AddPhoto() {
         console.log(payload)
 
         const image = await dispatch(uploadPhoto(payload))
-        console.log('hiiii', image)
+
         history.push(`/photos/${image.id}`)
 
     }
@@ -95,7 +108,6 @@ function AddPhoto() {
                         type='date'
                         value={dateTaken}
                         onChange={ e => setDateTaken(e.target.value)}
-                        required
                     />
                 </label>
             </div>
