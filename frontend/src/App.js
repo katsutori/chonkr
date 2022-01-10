@@ -8,6 +8,8 @@ import SignupFormPage from './components/SignupFormPage';
 import SplashPage from './components/SplashPage';
 import HomeApp from './components/App';
 import HomeHeader from './components/App/Header';
+import AddPhoto from './components/App/AddPhoto';
+import PhotoDetail from './components/App/SingleImage';
 import Footer from './components/Footer';
 import * as sessionActions from './store/session'
 
@@ -37,8 +39,8 @@ function App() {
   return isLoaded  && (
     <>
       <HomeHeader />
-      <NavLink exact to='/'>Explore</NavLink>
-      <NavLink to='/hellmo'>Hellmo</NavLink>
+      <NavLink className='nav-links' exact to='/'>Explore</NavLink>
+      <NavLink className='nav-links' to='/hellmo'>Hellmo</NavLink>
       <Switch>
         <Route exact path='/'>
           <HomeApp />
@@ -51,6 +53,12 @@ function App() {
         </Route>
         <Route path='/signup'>
           <Redirect to='/' />
+        </Route>
+        <Route path='/upload'>
+          <AddPhoto />
+        </Route>
+        <Route path='/photos/:id'>
+          <PhotoDetail />
         </Route>
         <Route>
           Page Not Found
