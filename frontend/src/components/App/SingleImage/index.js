@@ -33,7 +33,6 @@ const PhotoDetail = () => {
     }
 
     if (!single) {
-        console.log('hi')
         return (
             <Redirect to='/garbage' />
         )

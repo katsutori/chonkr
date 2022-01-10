@@ -39,4 +39,6 @@ figure > img {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 100px;
+    background-color: white;
+    padding: 15px;
 }
