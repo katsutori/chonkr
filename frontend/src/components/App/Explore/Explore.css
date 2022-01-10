@@ -1,3 +1,16 @@
+.title-container {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+}
+
+.explore-title{
+  font-size: 24px;
+  font-weight: 400;
+}
 
 .photo-spread {
     grid-row: 1 / -1;

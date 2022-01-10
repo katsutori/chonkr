@@ -34,9 +34,6 @@ function HomeApp() {
 
     return (
         <div className='logged-home'>
-            <h1>You are logged in</h1>
-
-            <h2>There are lots of rabbits here.</h2>
 
             <Explore photos={photos} />
 
