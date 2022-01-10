@@ -10,7 +10,7 @@ function AddPhoto() {
     const dispatch = useDispatch()
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
-    const [userId, setUserId] = useState(sessionUser.user.id)
+    const [userId, setUserId] = useState()
     const [title, setTitle] = useState('')
     const [url, setUrl] = useState('')
     const [description, setDescription] = useState('')
@@ -18,9 +18,17 @@ function AddPhoto() {
     const [errors, setErrors] = useState([])
 
 
+    useEffect(() => {
+        if (sessionUser.id) {
+            setUserId(sessionUser.id)
+        }
+        if (sessionUser.user.id) {
+            setUserId(sessionUser.user.id)
+        }
+    }, [])
+
     const handleUpload = async (e) => {
         e.preventDefault()
-        console.log(sessionUser.user.id)
         setErrors([])
 
         let payload = {
