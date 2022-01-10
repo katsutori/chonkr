@@ -1,4 +1,77 @@
 .single-image-container {
-    margin-top:50px;
+    padding-top:50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+    background-color: #212124;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.single-image {
+    max-height: 500px;
+}
+
+.image-data-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-data {
+    width: 100%;
+    max-width: 700px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     margin-bottom: 100px;
+}
+
+.your-delete {
+    color: white;
+    background-color: #0364cb;
+    transition: color .15s ease-in-out;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 33px;
+    text-align: center;
+    border-radius: 5px;
+    margin-right: 15px;
+    text-decoration: none;
+    border: 0px solid black;
+    cursor: pointer;
+}
+
+.your-delete:hover {
+    background-color: #fe0181;
+}
+
+.your-edit {
+    color: white;
+    background-color: #0364cb;
+    transition: color .15s ease-in-out;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    box-sizing: border-box;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 33px;
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 5px;
+    margin-right: 25px;
+    text-decoration: none;
+    border: 0px solid black;
+    cursor: pointer;
+}
+
+.your-edit:hover {
+    background-color: #fe0181;
+}
+
+.nope {
+    text-align: center;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-size: 35px;
+    font-weight: bold;
 }

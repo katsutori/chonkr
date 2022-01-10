@@ -35,7 +35,7 @@ function App() {
           <LoginPage page='signup' />
       </Route>
       <Route>
-        Page Not Found
+        <p className='nope'>Nope. There's nothing here.</p>
       </Route>
     </Switch>
   )
@@ -66,7 +66,7 @@ function App() {
           <EditPhoto />
         </Route>
         <Route>
-          Page Not Found
+          <p className='nope'>Nope. There's nothing here.</p>
         </Route>
 
 
