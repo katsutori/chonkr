@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams, useHistory, Link } from 'react-router-dom'
+import { useParams, useHistory, Link, Redirect } from 'react-router-dom'
 import * as sessionActions from '../../../store/session'
 
 import { getAllPhotos } from '../../../store/photos'
@@ -30,6 +30,13 @@ const PhotoDetail = () => {
 
         history.push('/')
 
+    }
+
+    if (!single) {
+        console.log('hi')
+        return (
+            <Redirect to='/garbage' />
+        )
     }
 
     return (
