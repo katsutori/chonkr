@@ -10,16 +10,17 @@ function AddPhoto() {
     const dispatch = useDispatch()
     const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
-    const [userId, setUserId] = useState(sessionUser.id)
+    const [userId, setUserId] = useState(sessionUser.user.id)
     const [title, setTitle] = useState('')
     const [url, setUrl] = useState('')
     const [description, setDescription] = useState('')
     const [dateTaken, setDateTaken] = useState(new Date())
     const [errors, setErrors] = useState([])
 
+
     const handleUpload = async (e) => {
         e.preventDefault()
-
+        console.log(sessionUser.user.id)
         setErrors([])
 
         let payload = {
