@@ -34,16 +34,9 @@ function HomeHeader() {
             <div className='logo'>
                 <img className='logo-image' src={logo} />
             </div>
-            <div className='splash-search'>
-                <form onSubmit={handleSearch}>
-                    <input
-                        type='text'
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                        placeholder='Search for photos or chonky animal picture takerers'
-                    />
-                    <button type='submit'></button>
-                </form>
+            <div className='nav-bar'>
+                <NavLink className='nav-bar-links' to="/">Explore</NavLink>
+                <NavLink className='nav-bar-links' to='/hellmo'>HellMo</NavLink>
             </div>
             <div className='splash-navigation'>
                 <Link className='login-button' to='/upload'><img alt='Upload' src={upload} /></Link>

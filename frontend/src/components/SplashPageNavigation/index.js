@@ -19,7 +19,7 @@ function SplashNavigation() {
                 <a href='/'><img className='logo-image' src={logo} /></a>
             </div>
             <div className='splash-search'>
-                <form onSubmit={handleSearch}>
+                {/* <form onSubmit={handleSearch}>
                     <input
                         type='text'
                         value={search}
@@ -27,7 +27,7 @@ function SplashNavigation() {
                         placeholder='Search for photos or chonky animal picture takerers'
                     />
                     <button type='submit'></button>
-                </form>
+                </form> */}
             </div>
             <div className='splash-navigation'>
                 <a className='login-button' href='/login'>Log In</a>

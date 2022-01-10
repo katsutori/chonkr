@@ -42,8 +42,6 @@ function App() {
   return isLoaded  && (
     <>
       <HomeHeader />
-      <NavLink className='nav-links' exact to='/'>Explore</NavLink>
-      <NavLink className='nav-links' to='/hellmo'>Hellmo</NavLink>
       <Switch>
         <Route exact path='/'>
           <HomeApp />
