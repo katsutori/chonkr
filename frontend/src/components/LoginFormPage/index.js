@@ -12,11 +12,15 @@ function LoginFormPage() {
     const [password, setPassword] = useState('')
     const [errors, setErrors] = useState([])
 
+
+
     if (sessionUser) return (
         <Redirect to='/' />
     )
 
-    const handleLogin = (e) =>{
+
+    const handleLogin = (e) =>
+    {
         e.preventDefault()
 
        setErrors([])
@@ -29,6 +33,18 @@ function LoginFormPage() {
 
         })
 
+    }
+
+    const handleDemo = (e) => {
+        e.preventDefault()
+        setCredential('Demo-lition')
+        setPassword('password')
+        return dispatch(sessionActions.login( {credential, password} ))
+        .catch(async (res) => {
+            const data = await res.json()
+            if (data && data.errors) setErrors(data.errors)
+
+        })
     }
 
     return (
@@ -66,6 +82,9 @@ function LoginFormPage() {
                 </div>
                 <div className='button-container'>
                     <button type='submit'>Sign In</button>
+                </div>
+                <div className='button-container-demo'>
+                    <button type='button' onClick={handleDemo}>Demo User</button>
                 </div>
                 {/* <div className='sign-up'><div className='i-need-a-damn-space'>Not a Chonkr member?</div> <a className='sign-up-link' href='/signup'> Sign up here.</a></div> */}
                 <div className='sign-up'><div className='i-need-a-damn-space'>Not a Chonkr member?</div> <Link className='sign-up-link' to='/signup'> Sign up here.</Link></div>
