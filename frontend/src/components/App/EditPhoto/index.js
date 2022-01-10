@@ -26,6 +26,20 @@ function EditPhoto() {
     const [title, setTitle] = useState(workingPhoto.title)
     const [description, setDescription] = useState(workingPhoto.description)
     const [dateTaken, setDateTaken] = useState(workingPhoto.dateTaken)
+    const [errors, setErrors] = useState([])
+
+    useEffect(() => {
+        let errs = []
+        if (!title) {
+            errs.push('You need a title.')
+        }
+        if (!description) {
+            errs.push('You need to tell us about your chonk.')
+        }
+
+        setErrors(errs)
+
+    }, [title, description])
 
     const handleEdits = async (e) => {
         e.preventDefault()
@@ -45,6 +59,9 @@ function EditPhoto() {
     return (
         <>
             <form onSubmit={handleEdits}>
+                <ul>
+                    {errors.map((error, i) => <li key={i}>{error}</li>)}
+                </ul>
                 <div className='label-container'>
                     <label>
                         <input

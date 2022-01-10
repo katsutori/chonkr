@@ -8,6 +8,24 @@ const { Photo } = require('../../db/models')
 
 const router = express.Router()
 
+const validateUpload = [
+    check('title')
+        .exists({ checkFalsy: true})
+        .withMessage('You need to provide a title.'),
+    check('photoUrl')
+        .exists({ checkFalsy: true })
+        .isURL()
+        .withMessage('You need to provide a valid url.'),
+    check('description')
+        .exists({ checkFalsy: true})
+        .withMessage('You need to provide a description for your Chonkr.'),
+    check('dateTaken')
+        .exists({ checkFalsy: true})
+        .isDate(),
+    handleValidationErrors
+
+]
+
 router.get('/', asyncHandler(async (req, res) => {
     const response = await Photo.findAll();
     res.json(response)
