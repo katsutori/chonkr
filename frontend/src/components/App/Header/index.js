@@ -46,7 +46,7 @@ function HomeHeader() {
                 </form>
             </div>
             <div className='splash-navigation'>
-                <Link className='login-button' to='/users/:id/photos'><img alt='Upload' src={upload} /></Link>
+                <Link className='login-button' to='/upload'><img alt='Upload' src={upload} /></Link>
                 <form onSubmit={handleLogout}>
                 <button className='logout-button' type='submit'>Logout</button>
                 </form>

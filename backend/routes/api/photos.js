@@ -14,14 +14,15 @@ router.get('/', asyncHandler(async (req, res) => {
 }))
 
 router.post('/', asyncHandler(async (req, res) => {
-    const { userId, url, description, dateTaken } = req.body
+    const { userId, title, url, description, dateTaken } = req.body
     const response = await Photo.create({
         userId,
+        title,
         url,
         description,
         dateTaken
     })
-    return res.redirect(`${req.baseUrl}/${response}`)
+    res.json(response)
 }))
 
 module.exports = router
