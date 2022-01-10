@@ -1,5 +1,8 @@
 
 .photo-spread {
+    grid-row: 1 / -1;
+    grid-column: 1;
+    border-radius: 5px;
     max-width: 100%;
     display: block;
 }
@@ -10,7 +13,12 @@ figure {
     grid-template-rows: 1fr auto;
     margin-bottom: 10px;
     break-inside: avoid;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: .5s;
   }
+
 
 figure > img {
     grid-row: 1 / -1;
