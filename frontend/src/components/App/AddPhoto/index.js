@@ -22,7 +22,7 @@ function AddPhoto() {
         if (sessionUser.id) {
             setUserId(sessionUser.id)
         }
-        if (sessionUser.user.id) {
+        if (sessionUser.user) {
             setUserId(sessionUser.user.id)
         }
     }, [])
