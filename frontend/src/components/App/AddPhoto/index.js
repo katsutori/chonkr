@@ -61,59 +61,67 @@ function AddPhoto() {
     }
 
     return (
-        <form onSubmit={handleUpload}>
-            <ul>
-                {errors.map((error, i) => <li key={i}>{error}</li>)}
-            </ul>
-            <div className='label-container'>
-                <label>
-                    <input
-                        className='upload-label'
-                        type='text'
-                        value={title}
-                        onChange={ e => setTitle(e.target.value)}
-                        required
-                        placeholder='Title'
-                    />
-                </label>
-            </div>
-            <div className='label-container'>
-                <label>
-                    <input
-                        className='upload-label'
-                        type='text'
-                        value={url}
-                        onChange={ e => setUrl(e.target.value)}
-                        required
-                        placeholder='Photo URL'
-                    />
-                </label>
-            </div>
-            <div className='label-container'>
-                <label>
-                    <input
-                        className='upload-label'
-                        type='text'
-                        value={description}
-                        onChange={ e => setDescription(e.target.value)}
-                        required
-                        placeholder='Photo description'
-                    />
-                </label>
-            </div>
-            <div className='label-container'>
-                <label> Date Taken
-                    <input
-                        className='upload-label'
-                        type='date'
-                        value={dateTaken}
-                        onChange={ e => setDateTaken(e.target.value)}
-                    />
-                </label>
-            </div>
-            <button type='submit'>Upload</button>
-            <Link to='/'>Cancel</Link>
-        </form>
+        <div className='upload-form-main'>
+            <form className='login-form' onSubmit={handleUpload}>
+
+                <div className='label-container'>
+                    <label>
+                        <input
+                            className='upload-label'
+                            type='text'
+                            value={title}
+                            onChange={ e => setTitle(e.target.value)}
+                            required
+                            placeholder='Title'
+                        />
+                    </label>
+                </div>
+                <div className='label-container'>
+                    <label>
+                        <input
+                            className='upload-label'
+                            type='text'
+                            value={url}
+                            onChange={ e => setUrl(e.target.value)}
+                            required
+                            placeholder='Photo URL'
+                        />
+                    </label>
+                </div>
+                <div className='label-container'>
+                    <label>
+                        <input
+                            className='upload-label'
+                            type='text'
+                            value={description}
+                            onChange={ e => setDescription(e.target.value)}
+                            required
+                            placeholder='Photo description'
+                        />
+                    </label>
+                </div>
+                <div className='label-container'>
+                    <label className='upload-label-area'> Date Taken
+                        <input
+                            className='upload-label upload-label-area-input'
+                            type='date'
+                            value={dateTaken}
+                            onChange={ e => setDateTaken(e.target.value)}
+                        />
+                    </label>
+                </div>
+                <div className='upload-photo'>
+                    <button type='submit'>Upload</button>
+                </div>
+                <div className='upload-photo'>
+                    <Link className='upload-cancel' to='/'>Cancel</Link>
+                </div>
+
+                <ul>
+                    {errors.map((error, i) => <li key={i}>{error}</li>)}
+                </ul>
+            </form>
+        </div>
     )
 }
 

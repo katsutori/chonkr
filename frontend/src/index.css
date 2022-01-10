@@ -7,6 +7,8 @@ body {
 
 ul {
     padding-inline-start: 25px;
+    font-family: Proxima Nova,Helvetica,sans-serif;
+    font-size: 14px;
 }
 
 h1 {
