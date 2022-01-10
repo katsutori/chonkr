@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './Explore.css'
 
 function Explore ({photos}) {
@@ -6,7 +7,9 @@ function Explore ({photos}) {
                 {photos?.map((photo, idx) => (
 
                     <figure  key={idx}>
-                        <img className='photo-spread' src={photo.url} />
+                        <Link to={`/photos/${photo.id}`}>
+                            <img className='photo-spread' src={photo.url} />
+                        </Link>
                     </figure>
 
                 ))}
