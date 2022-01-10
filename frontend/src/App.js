@@ -33,6 +33,9 @@ function App() {
       <Route path ='/signup'>
           <LoginPage page='signup' />
       </Route>
+      <Route>
+        Page Not Found
+      </Route>
     </Switch>
   )
 
