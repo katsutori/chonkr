@@ -4,12 +4,12 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-top: -250px;
+    margin-top: -265px;
     margin-left: -176px;
     align-items: center;
     justify-content: center;
     background-color: white;
-    height: 550px;
+    height: 580px;
     width: 352px;
     z-index: 100;
     border-radius: 5px;
@@ -29,6 +29,7 @@
     border: 1px solid rgba(0, 0, 0, .25);
     box-sizing: border-box;
     padding-left: 5px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
 }
 
 .upload-label:focus {
@@ -44,6 +45,12 @@
 .upload-label-area-input {
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     color: rgba(0, 0, 0, .65)
+}
+
+.upload-title{
+    text-align: center;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-weight: bold;
 }
 
 .upload-photo {

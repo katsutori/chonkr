@@ -63,7 +63,7 @@ function AddPhoto() {
     return (
         <div className='upload-form-main'>
             <form className='login-form' onSubmit={handleUpload}>
-
+            <p className='upload-title'>Upload Your Chonker</p>
                 <div className='label-container'>
                     <label>
                         <input

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useParams, useHistory } from 'react-router-dom'
+import { useParams, useHistory, Link } from 'react-router-dom'
 
 
 import * as sessionActions from '../../../store/session'
@@ -57,14 +57,13 @@ function EditPhoto() {
     }
 
     return (
-        <>
-            <form onSubmit={handleEdits}>
-                <ul>
-                    {errors.map((error, i) => <li key={i}>{error}</li>)}
-                </ul>
+        <div className='edit-form-main'>
+            <form className='login-Form' onSubmit={handleEdits}>
+                <p className='edit-title'>Edit Your Chonker</p>
                 <div className='label-container'>
                     <label>
                         <input
+                            className='edit-label'
                             type='text'
                             value={title}
                             onChange={ e => setTitle(e.target.value)}
@@ -74,6 +73,7 @@ function EditPhoto() {
                 <div className='label-container'>
                     <label>
                         <textarea
+                            className='edit-label'
                             type='text'
                             rows='5'
                             value={description}
@@ -82,17 +82,26 @@ function EditPhoto() {
                     </label>
                 </div>
                 <div className='label-container'>
-                    <label>
+                    <label className='edit-label-area'> Date Taken
                         <input
+                            className='edit-label edit-label-area-input'
                             type='date'
                             value={dateTaken}
                             onChange={ e => setDateTaken(e.target.value)}
                         />
                     </label>
                 </div>
-                <button type='submit'>Update</button>
+                <div className='edit-photo'>
+                    <button type='submit'>Update</button>
+                </div>
+                <div className='edit-photo'>
+                    <Link className='edit-cancel' to={`/photos/${workingPhoto.id}`}>Cancel</Link>
+                </div>
+                <ul>
+                    {errors.map((error, i) => <li key={i}>{error}</li>)}
+                </ul>
             </form>
-        </>
+        </div>
     )
 }
 
