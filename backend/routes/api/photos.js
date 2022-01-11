@@ -28,7 +28,9 @@ const validateUpload = [
 
 router.get('/', asyncHandler(async (req, res) => {
     const response = await Photo.findAll({
-        include: [{model: User}]
+        order: [['updatedAt', 'DESC']],
+        include: [{model: User}],
+
     });
     res.json(response)
 }))
