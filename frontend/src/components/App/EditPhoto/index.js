@@ -1,8 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, useHistory, Link } from 'react-router-dom'
-
-
 import * as sessionActions from '../../../store/session'
 
 import { getAllPhotos } from '../../../store/photos'
@@ -16,16 +14,22 @@ function EditPhoto() {
 
     const sessionUser = useSelector(state => state.session.user)
     const all = useSelector(state => state.photoState.entries)
+    const workingPhoto = all.find(one => one.id === +id)
 
     useEffect(() => {
         dispatch(getAllPhotos())
         dispatch(sessionActions.restore())
     }, [dispatch])
 
-    const workingPhoto = all.find(one => one.id === +id)
-    const [title, setTitle] = useState(workingPhoto.title)
-    const [description, setDescription] = useState(workingPhoto.description)
-    const [dateTaken, setDateTaken] = useState(workingPhoto.dateTaken)
+    let dateTook = '';
+
+    if(workingPhoto?.dateTaken) {
+        dateTook = workingPhoto.dateTaken.toString().slice(0, 10)
+    }
+
+    const [title, setTitle] = useState(workingPhoto?.title)
+    const [description, setDescription] = useState(workingPhoto?.description)
+    const [dateTaken, setDateTaken] = useState(dateTook)
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
@@ -36,10 +40,13 @@ function EditPhoto() {
         if (!description) {
             errs.push('You need to tell us about your chonk.')
         }
+        if(!dateTaken) {
+            errs.push('You need a valid date.')
+        }
 
         setErrors(errs)
 
-    }, [title, description])
+    }, [title, description, dateTaken])
 
     const handleEdits = async (e) => {
         e.preventDefault()
@@ -54,6 +61,12 @@ function EditPhoto() {
         const updateThisPhoto = await dispatch(updatingPhoto(payload))
         history.push(`/photos/${id}`)
 
+    }
+
+    if (!workingPhoto) {
+        return (
+            <p className='nope'>Nope. There's nothing here.</p>
+        )
     }
 
     return (
