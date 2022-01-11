@@ -48,7 +48,7 @@ const PhotoDetail = () => {
                     <h1>{single?.title}</h1>
                     <p><b>Description:</b> {single?.description}</p>
                     <p><b>Date Taken:</b> {single?.dateTaken.slice(0, 10)}</p>
-                    <p><b>Taken By:</b> {single?.User.username}</p>
+                    <p><b>Taken By:</b> {single?.User?.username}</p>
                     {single?.userId === sessionUser.id ? <button className='your-delete' onClick={handleDelete} type='submit'>Delete</button>:<></>}
                     {single?.userId === sessionUser.id ? <Link to={`/photos/${single.id}/edit`}><button className='your-edit'  type='submit'>Edit</button></Link>:<></>}
                 </div>
