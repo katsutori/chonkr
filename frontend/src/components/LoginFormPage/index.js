@@ -37,9 +37,8 @@ function LoginFormPage() {
 
     const handleDemo = (e) => {
         e.preventDefault()
-        setCredential('Demo-lition')
-        setPassword('password')
-        return dispatch(sessionActions.login( {credential, password} ))
+
+        return dispatch(sessionActions.login( {credential: 'Demo-lition', password: 'password'} ))
         .catch(async (res) => {
             const data = await res.json()
             if (data && data.errors) setErrors(data.errors)
