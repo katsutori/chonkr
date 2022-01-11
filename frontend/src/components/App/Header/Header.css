@@ -46,3 +46,8 @@
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     font-weight: 600;
 }
+
+.nav-bar-links:hover {
+    color: rgba(255, 255, 255, .5);
+
+}

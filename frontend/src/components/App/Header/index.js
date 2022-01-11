@@ -36,8 +36,9 @@ function HomeHeader() {
             </div>
             <div className='nav-bar'>
                 <NavLink className='nav-bar-links' to="/">Explore</NavLink>
-                <NavLink className='nav-bar-links' to='/hellmo'>HellMo</NavLink>
                 <NavLink className='nav-bar-links' to='/photostream'>My Photostream</NavLink>
+                <a className='nav-bar-links' href='https://github.com/katsutori/chonkr' target='blank'>GitHub Repo</a>
+                <a className='nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>My LinkedIn or Not</a>
             </div>
             <div className='splash-navigation'>
                 <Link className='login-button' to='/upload'><img alt='Upload' src={upload} /></Link>
