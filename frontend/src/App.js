@@ -43,34 +43,37 @@ function App() {
   return isLoaded  && (
     <>
       <HomeHeader />
-      <Switch>
-        <Route exact path='/'>
-          <HomeApp />
-        </Route>
-        <Route path='/hellmo'>
-          <h1>Hellmo</h1>
-        </Route>
-        <Route path='/login'>
-          <Redirect to='/' />
-        </Route>
-        <Route path='/signup'>
-          <Redirect to='/' />
-        </Route>
-        <Route path='/upload'>
-          <AddPhoto />
-        </Route>
-        <Route exact path='/photos/:id'>
-          <PhotoDetail />
-        </Route>
-        <Route path='/photos/:id/edit'>
-          <EditPhoto />
-        </Route>
-        <Route>
-          <p className='nope'>Nope. There's nothing here.</p>
-        </Route>
+        <Switch>
+          <Route exact path='/'>
+            <HomeApp way={'explore'}/>
+          </Route>
+          <Route path='/hellmo'>
+            <h1>Hellmo</h1>
+          </Route>
+          <Route path='/photostream'>
+            <HomeApp way={'photostream'} />
+          </Route>
+          <Route path='/login'>
+            <Redirect to='/' />
+          </Route>
+          <Route path='/signup'>
+            <Redirect to='/' />
+          </Route>
+          <Route path='/upload'>
+            <AddPhoto />
+          </Route>
+          <Route exact path='/photos/:id'>
+            <PhotoDetail />
+          </Route>
+          <Route path='/photos/:id/edit'>
+            <EditPhoto />
+          </Route>
+          <Route>
+            <p className='nope'>Nope. There's nothing here.</p>
+          </Route>
 
 
-      </Switch>
+        </Switch>
       <Footer />
     </>
   );
