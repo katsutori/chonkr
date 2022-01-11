@@ -55,7 +55,7 @@ function EditPhoto() {
     setTimeout(()=> setTitle(workingPhoto?.title), 100)
     setTimeout(()=> setDescription(workingPhoto?.description), 100)
     setTimeout(()=> setDateTaken(stringDate(workingPhoto?.dateTaken)), 100)
-    // setTimeout(()=> setDateTaken(workingPhoto?.dateTaken), 100)
+
 
     const handleEdits = async (e) => {
         e.preventDefault()
