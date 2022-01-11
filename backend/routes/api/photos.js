@@ -22,7 +22,8 @@ const validateUpload = [
         .withMessage('You need to provide a better description for your Chonkr.'),
     check('dateTaken')
         .exists({ checkFalsy: true})
-        .isDate(),
+        .isDate()
+        .withMessage('Real date, please.')
 ]
 
 router.get('/', asyncHandler(async (req, res) => {
