@@ -27,19 +27,19 @@ function AddPhoto() {
         }
     }, [])
 
-    useEffect(() => {
-        let errs = [];
-        if (!title) {
-            errs.push('You need to provide a title.')
-        }
-        if (!url.includes('http')) {
-            errs.push('You need to provide a valid image url.')
-        }
-        if (!description) {
-            errs.push('You need to provide a description for your Chonkr.')
-        }
-        setErrors(errs)
-    }, [title, url, description, dateTaken])
+    // useEffect(() => {
+    //     let errs = [];
+    //     if (!title) {
+    //         errs.push('You need to provide a title.')
+    //     }
+    //     if (!url.includes('http')) {
+    //         errs.push('You need to provide a valid image url.')
+    //     }
+    //     if (!description) {
+    //         errs.push('You need to provide a description for your Chonkr.')
+    //     }
+    //     setErrors(errs)
+    // }, [title, url, description, dateTaken])
 
     const handleUpload = async (e) => {
         e.preventDefault()
@@ -52,11 +52,16 @@ function AddPhoto() {
             dateTaken
         }
 
-        console.log(payload)
+        let errs = []
 
         const image = await dispatch(uploadPhoto(payload))
 
-        history.push(`/photos/${image.id}`)
+        if(image.errors) {
+            const errList = Object.values(image.errors)
+            const flat = [...errList]
+            flat.map(each => errs.push(each.msg))
+            setErrors(errs)
+        } else { history.push(`/photos/${image.id}`) }
 
     }
 
