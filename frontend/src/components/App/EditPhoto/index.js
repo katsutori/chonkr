@@ -52,9 +52,9 @@ function EditPhoto() {
         return date.slice(0,10)
     }
 
-    setTimeout(()=> setTitle(workingPhoto?.title), 100)
-    setTimeout(()=> setDescription(workingPhoto?.description), 100)
-    setTimeout(()=> setDateTaken(stringDate(workingPhoto?.dateTaken)), 100)
+    // setTimeout(()=> setTitle(workingPhoto?.title), 100)
+    // setTimeout(()=> setDescription(workingPhoto?.description), 100)
+    // setTimeout(()=> setDateTaken(stringDate(workingPhoto?.dateTaken)), 100)
 
 
     const handleEdits = async (e) => {
