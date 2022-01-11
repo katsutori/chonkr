@@ -18,9 +18,9 @@ function Explore ({photos}) {
     }, [dispatch])
     return (
         <>
-            <div className='title-container'>
+            {/* <div className='title-container'>
                 <h1 className='explore-title'>Explore</h1>
-            </div>
+            </div> */}
             <div className='outside-grid'>
                     {photos?.map((photo, idx) => (
 

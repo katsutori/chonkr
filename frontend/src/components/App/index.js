@@ -38,7 +38,9 @@ function HomeApp({way}) {
     if (way === 'explore') {
         return (
             <div className='logged-home'>
-
+                <div className='title-container'>
+                    <h1 className='explore-title'>Explore</h1>
+                </div>
                 <Explore photos={photos} />
 
 
@@ -49,6 +51,9 @@ function HomeApp({way}) {
     if (way === 'photostream') {
         return (
             <div className='logged-home'>
+                <div className='title-container'>
+                    <h1 className='explore-title'>My Photostream</h1>
+                </div>
                 <Explore photos={choices} />
             </div>
         )
