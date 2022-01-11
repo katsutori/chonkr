@@ -38,13 +38,13 @@ This is a chonky clone of [Flickr](https://www.flickr.com/). Access the [Chonkr 
 
     8 ```"proxy": "http://localhost:5000"```
 
-7. Create Database, Migrate, and Seed models
+7. Create Database, Migrate, and Seed models.
 
     * ```npx dotenv sequelize db:create```
     * ```npx dotenv sequelize db:migrate```
     * ```npx dotenv sequelize db:seed:all```
 
-8. Start the services in the backend directory
+8. Start the services in the backend directory.
 
     * ```npm start```
 
@@ -56,6 +56,6 @@ This is a chonky clone of [Flickr](https://www.flickr.com/). Access the [Chonkr 
 
 # Features
 
-Logged in users can:
+Logged in users can perform the following actions.
 
  - Add/View/Edit/Delete Photos
