@@ -35,8 +35,9 @@ function HomeHeader() {
                 <img className='logo-image' src={logo} />
             </div>
             <div className='nav-bar'>
-                <NavLink className='nav-bar-links' to="/">Explore</NavLink>
+                <NavLink className='nav-bar-links' to="/" active>Explore</NavLink>
                 <NavLink className='nav-bar-links' to='/photostream'>My Photostream</NavLink>
+                <NavLink className='nav-bar-links' to='/'>Albums</NavLink>
                 <a className='nav-bar-links' href='https://github.com/katsutori/chonkr' target='blank'>GitHub Repo</a>
                 <a className='nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>My LinkedIn or Not</a>
             </div>
