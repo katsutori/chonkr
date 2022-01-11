@@ -81,7 +81,7 @@ function EditPhoto() {
     return (
         <div className='edit-form-main'>
             <form className='edit-form' onSubmit={handleEdits}>
-                <p className='edit-title'>Edit Your Chonker</p>
+                <p className='edit-title'>Edit Your Chonkr</p>
                 <div className='label-container'>
                     <label>
                         <input
