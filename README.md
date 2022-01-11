@@ -34,7 +34,7 @@ This is a chonky clone of [Flickr](https://www.flickr.com/). Access the [Chonkr 
 
 5. Enter your username and password information into your .env file along with your desired database name, a secured combination of characters for your JWT_SECRET, and your desired PORT (preferably 5000).
 
-6. Add the following proxy to your package.json file within your frontend directory, replacing or keeping the 5000 port to match your PORT configuration found in your .env file:.
+6. Add the following proxy to your package.json file within your frontend directory, replacing or keeping the 5000 port to match your PORT configuration found in your .env file.
 
     8 ```"proxy": "http://localhost:5000"```
 
