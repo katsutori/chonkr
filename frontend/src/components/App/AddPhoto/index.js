@@ -14,7 +14,7 @@ function AddPhoto() {
     const [title, setTitle] = useState('')
     const [url, setUrl] = useState('')
     const [description, setDescription] = useState('')
-    const [dateTaken, setDateTaken] = useState(new Date())
+    const [dateTaken, setDateTaken] = useState('1963-11-22')
     const [errors, setErrors] = useState([])
 
 
