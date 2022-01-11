@@ -12,7 +12,7 @@ import Footer from '../Footer'
 import './HomeApp.css'
 
 
-function HomeApp() {
+function HomeApp({way}) {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const photos = useSelector(state => state.photoState.entries)
@@ -32,14 +32,27 @@ function HomeApp() {
 
     }
 
-    return (
-        <div className='logged-home'>
+    const choices = photos?.filter(photo => photo.userId === sessionUser.id)
+    console.log(choices)
 
-            <Explore photos={photos} />
+    if (way === 'explore') {
+        return (
+            <div className='logged-home'>
+
+                <Explore photos={photos} />
 
 
-        </div>
-    )
+            </div>
+        )
+    }
+
+    if (way === 'photostream') {
+        return (
+            <div className='logged-home'>
+                <Explore photos={choices} />
+            </div>
+        )
+    }
 }
 
 export default HomeApp
