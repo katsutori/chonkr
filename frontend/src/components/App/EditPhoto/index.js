@@ -27,12 +27,11 @@ function EditPhoto() {
         dateTook = workingPhoto.dateTaken.toString().slice(0, 10)
     }
 
-    const [titleLoading, setTitleLoading] = useState(workingPhoto?.title)
-    const [title, setTitle] = useState('')
+    const [title, setTitle] = useState(workingPhoto?.title)
     const [description, setDescription] = useState(workingPhoto?.description)
     const [dateTaken, setDateTaken] = useState(dateTook)
-
     const [errors, setErrors] = useState([])
+
 
     useEffect(() => {
         let errs = []
@@ -87,6 +86,7 @@ function EditPhoto() {
             <p className='nope'>Nope. There's nothing here.</p>
         )
     }
+
 
     return (
         <div className='edit-form-main'>
