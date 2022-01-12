@@ -59,3 +59,4 @@ This is a chonky clone of [Flickr](https://www.flickr.com/). Access the [Chonkr 
 Logged in users can perform the following actions.
 
  - Add/View/Edit/Delete Photos
+ - Add/View Albums
