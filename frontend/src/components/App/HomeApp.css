@@ -7,3 +7,24 @@
     color: black;
     font-size: 20px;
 }
+
+.album-title {
+    display: flex;
+    align-items: center;
+}
+
+.album-header {
+    display: grid;
+}
+
+.add-album {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left:15px;
+    color: #0364cb;
+}
+
+.add-album:hover {
+    color: #fe0181;
+}

@@ -5,6 +5,7 @@ const sessionRouter = require('./session.js')
 const userRouter = require('./users.js')
 const photoRouter = require('./photos')
 const albumRouter = require('./albums')
+const joinRouter = require('./join')
 
 const asyncHandler = require('express-async-handler')
 const { setTokenCookie, restoreUser, requireAuth } = require('../../utils/auth.js')
@@ -14,6 +15,7 @@ router.use('/session', sessionRouter)
 router.use('/users', userRouter)
 router.use('/photos', photoRouter)
 router.use('/albums', albumRouter)
+router.use('/join', joinRouter)
 
 // test middleware
 // router.get('/require-auth', requireAuth, (req, res) => {

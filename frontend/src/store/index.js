@@ -3,13 +3,15 @@ import thunk from "redux-thunk";
 import sessionReducer from "./session";
 import photoReducer from "./photos";
 import albumReducer from "./album";
+import joinReducer from "./join";
 
 
 const rootReducer = combineReducers({
   // add reducer functions here
   session: sessionReducer,
   photoState: photoReducer,
-  albumState: albumReducer
+  albumState: albumReducer,
+  joinState: joinReducer
 });
 
 let enhancer;
