@@ -27,7 +27,9 @@ function Explore ({photos}) {
                         <figure  key={idx}>
                             <Link to={`/photos/${photo.id}`}>
                                 <img className='photo-spread' src={photo.url} />
+
                             </Link>
+                            <figcaption><b>Taken by:</b> {photo?.User?.username}</figcaption>
                         </figure>
 
                     ))}

@@ -44,6 +44,18 @@ figure > img {
     animation-duration: .5s;
   }
 
+  figcaption {
+    grid-row: 2;
+    grid-column: 1;
+    background-color: rgba(255,255,255,.5);
+    padding: .2em .5em;
+    justify-self: start;
+    position:absolute;
+    border-radius: 0px 0px 5px 0px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    padding: 10px;
+  }
+
 
 .outside-grid {
     column-count: 4;
