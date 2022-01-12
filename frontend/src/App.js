@@ -9,19 +9,34 @@ import SplashPage from './components/SplashPage';
 import HomeApp from './components/App';
 import HomeHeader from './components/App/Header';
 import AddPhoto from './components/App/AddPhoto';
+import AddAlbum from './components/App/AddAlbum';
 import PhotoDetail from './components/App/SingleImage';
 import EditPhoto from './components/App/EditPhoto';
+import ViewAlbum from './components/App/ViewAlbum';
 import Footer from './components/Footer';
 import * as sessionActions from './store/session'
+import { getUserAlbums } from '../src/store/album'
 
 function App() {
   const dispatch = useDispatch()
   const [isLoaded, setIsLoaded] = useState(false)
   const sessionUser = useSelector(state => state.session.user)
+  const albums = useSelector(state => state.albumState.entries)
+  let id;
 
   useEffect(() => {
     dispatch(sessionActions.restore()).then(() => setIsLoaded(true))
   }, [dispatch])
+
+  if(sessionUser) {
+    id = sessionUser.id
+  }
+
+  useEffect(() => {
+    dispatch(getUserAlbums(id))
+  }, [sessionUser])
+
+
 
   if(!sessionUser) return (
     <Switch>
@@ -53,8 +68,14 @@ function App() {
           <Route path='/photostream'>
             <HomeApp way={'photostream'} />
           </Route>
-          <Route path='/albums'>
+          <Route exact path='/albums'>
             <HomeApp way={'albums'} />
+          </Route>
+          <Route path='/albums/add'>
+            <AddAlbum />
+          </Route>
+          <Route exact path='/albums/:id'>
+            <ViewAlbum />
           </Route>
           <Route path='/login'>
             <Redirect to='/' />
@@ -63,13 +84,13 @@ function App() {
             <Redirect to='/' />
           </Route>
           <Route path='/upload'>
-            <AddPhoto />
+            <AddPhoto albums={albums}/>
           </Route>
           <Route exact path='/photos/:id'>
             <PhotoDetail />
           </Route>
-          <Route path='/photos/:id/edit'>
-            <EditPhoto />
+          <Route exact path='/photos/:id/edit'>
+            <EditPhoto albums={albums}/>
           </Route>
           <Route>
             <p className='nope'>Nope. There's nothing here.</p>

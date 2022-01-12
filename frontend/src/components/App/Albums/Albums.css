@@ -1,3 +1,20 @@
+.outside-grid-album {
+    column-count: 3;
+    column-gap: 10px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    background-color: white;
+    padding: 15px;
+}
+
 .proto-album {
     padding: 15px;
 }
+
+@media screen and (max-width: 600px) {
+    .outside-grid-album {
+      column-count: 2;
+    }
+  }

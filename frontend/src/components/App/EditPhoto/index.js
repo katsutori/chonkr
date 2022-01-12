@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useParams, useHistory, Link } from 'react-router-dom'
+import { addJoin } from '../../../store/join'
 import * as sessionActions from '../../../store/session'
 
 import { getAllPhotos } from '../../../store/photos'
 import { updatingPhoto } from '../../../store/photos'
 import './EditPhoto.css'
 
-function EditPhoto() {
+function EditPhoto({albums}) {
     const dispatch = useDispatch()
     const history = useHistory()
     const { id } = useParams()
@@ -30,6 +31,7 @@ function EditPhoto() {
     const [title, setTitle] = useState(workingPhoto?.title)
     const [description, setDescription] = useState(workingPhoto?.description)
     const [dateTaken, setDateTaken] = useState(dateTook)
+    const [albumId, setAlbumId] = useState('')
     const [errors, setErrors] = useState([])
 
 
@@ -76,7 +78,17 @@ function EditPhoto() {
             dateTaken
         }
 
+        const joinPayload = {
+            photoId: workingPhoto.id,
+            albumId
+        }
+
         const updateThisPhoto = await dispatch(updatingPhoto(payload))
+
+        if(albumId){
+            const addToAlbum = await dispatch(addJoin(joinPayload))
+        }
+
         history.push(`/photos/${id}`)
 
     }
@@ -84,6 +96,12 @@ function EditPhoto() {
     if (!workingPhoto) {
         return (
             <p className='nope'>Nope. There's nothing here.</p>
+        )
+    }
+
+    if (workingPhoto.userId !== sessionUser.id) {
+        return (
+            <p className='nope'>This ain't your photo, homie.</p>
         )
     }
 
@@ -126,6 +144,12 @@ function EditPhoto() {
                         />
                     </label>
                 </div>
+                {albums.length? <div className='label-container'>
+                    <select className='album-select' value={albumId} onChange={ e => setAlbumId(e.target.value)}>
+                        <option className='upload-label-area album-option' value=''>Choose an album</option>
+                        {albums?.map(album => <option className='upload-label-area album-option' key={album.id} value={album.id}>{album.name}</option>)}
+                    </select>
+                </div>:<></>}
                 <div className='edit-photo'>
                     <button type='submit'>Update</button>
                 </div>

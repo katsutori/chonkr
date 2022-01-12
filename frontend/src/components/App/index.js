@@ -73,8 +73,9 @@ function HomeApp({way}) {
     if (way === 'albums') {
         return (
             <div className='logged-home'>
-                <div className='title-container'>
-                    <h1 className='explore-title'>My Albums</h1>
+                <div className='title-container album-title'>
+                    <h1 className='explore-title album-header'>My Albums</h1>
+                    <Link className='add-album' to='/albums/add'>+</Link>
                 </div>
                 <Albums albums={albums} />
             </div>
