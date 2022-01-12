@@ -1,6 +1,6 @@
 .main {
     display: grid;
-    grid-template-columns: 1fr 6fr 1.5fr;
+    grid-template-columns: 1fr 2fr 1.5fr;
     background-color: rgba(0,0,0,.8);
     height: 64px;
     z-index: 100;
@@ -100,4 +100,10 @@
 .signup-button:focus {
     box-shadow: inset 0 0 0 2px rgb(0 0 0 / 60%);
     outline: none;
+}
+
+@media screen and (max-width: 600px) {
+    .signup-button {
+        display: none;
+    }
 }
