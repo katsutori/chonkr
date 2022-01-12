@@ -7,7 +7,7 @@ import { getAllPhotos } from '../../../store/photos'
 
 import './Explore.css'
 
-function Explore ({photos}) {
+function Explore ({photos, style}) {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const all = useSelector(state => state.photoState.entries)
@@ -29,7 +29,9 @@ function Explore ({photos}) {
                                 <img className='photo-spread' src={photo.url} />
 
                             </Link>
-                            <figcaption><b>Taken by:</b> {photo?.User?.username}</figcaption>
+                            <Link className={style} to={`/photos/${photo.id}`}>
+                            <b>{photo?.title}</b> <br/>by {photo?.User?.username}
+                            </Link>
                         </figure>
 
                     ))}

@@ -30,6 +30,7 @@ function HomeHeader() {
     }
 
     return (
+        <>
         <div className='main'>
             <div className='logo'>
                 <img className='logo-image' src={logo} />
@@ -39,7 +40,7 @@ function HomeHeader() {
                 <NavLink className='nav-bar-links' to='/photostream'>My Photostream</NavLink>
                 <NavLink className='nav-bar-links' to='/'>Albums</NavLink>
                 <a className='nav-bar-links' href='https://github.com/katsutori/chonkr' target='blank'>GitHub Repo</a>
-                <a className='nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>My LinkedIn or Not</a>
+                <a className='nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>LinkedIn</a>
             </div>
             <div className='splash-navigation'>
                 <Link className='login-button' to='/upload'><img alt='Upload' src={upload} /></Link>
@@ -47,7 +48,18 @@ function HomeHeader() {
                 <button className='logout-button' type='submit'>Logout</button>
                 </form>
             </div>
+
         </div>
+        <div className='responsive-nav'>
+            <div className='drop-button'>
+                <NavLink className='res-nav-bar-links' to="/" >Explore</NavLink>
+                <NavLink className='res-nav-bar-links' to='/photostream'>My Photostream</NavLink>
+                <NavLink className='res-nav-bar-links' to='/'>Albums</NavLink>
+                <a className='res-nav-bar-links' href='https://github.com/katsutori/chonkr' target='blank'>GitHub Repo</a>
+                <a className='res-nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>LinkedIn</a>
+            </div>
+        </div>
+        </>
     )
 }
 

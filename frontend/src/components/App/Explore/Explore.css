@@ -44,7 +44,7 @@ figure > img {
     animation-duration: .5s;
   }
 
-  figcaption {
+  /* figcaption {
     grid-row: 2;
     grid-column: 1;
     background-color: rgba(255,255,255,.5);
@@ -54,8 +54,32 @@ figure > img {
     border-radius: 0px 0px 5px 0px;
     font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
     padding: 10px;
-  }
+  } */
+.explore-caption {
+  grid-row: 2;
+    grid-column: 1;
+    background-color: rgba(0,0,0,.8);
+    color: rgba(255, 255, 255, .7);
+    padding: .2em .5em;
+    justify-self: start;
+    position:absolute;
+    border-radius: 0px 0px 5px 0px;
+    font-family: Proxima Nova,helvetica neue,helvetica,arial,sans-serif;
+    font-size: 12px;
+    padding: 8px;
+    line-height: 15px;
+    text-decoration: none;
+}
 
+.explore-caption:hover {
+    color: rgba(255, 255, 255, 1);
+    padding: 10px;
+    transition: .5s ease-in-out;
+}
+
+.photostream-caption {
+  display: none;
+}
 
 .outside-grid {
     column-count: 4;
@@ -66,4 +90,14 @@ figure > img {
     margin-bottom: 100px;
     background-color: white;
     padding: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  /* .explore-caption {
+    display: none;
+  } */
+
+  .outside-grid {
+    column-count: 2;
+  }
 }

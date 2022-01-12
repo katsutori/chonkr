@@ -41,7 +41,7 @@ function HomeApp({way}) {
                 <div className='title-container'>
                     <h1 className='explore-title'>Explore</h1>
                 </div>
-                <Explore photos={photos} />
+                <Explore photos={photos} style='explore-caption' />
 
 
             </div>
@@ -54,7 +54,7 @@ function HomeApp({way}) {
                 <div className='title-container'>
                     <h1 className='explore-title'>My Photostream</h1>
                 </div>
-                <Explore photos={choices} />
+                <Explore photos={choices} style='photostream-caption'/>
             </div>
         )
     }
