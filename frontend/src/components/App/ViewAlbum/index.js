@@ -13,23 +13,34 @@ function ViewAlbum() {
     // console.log(photoLibrary)
 
     if (!workingLibrary.Joins.length) {
-        console.log(workingLibrary.Joins.length)
         return (
-            <p className='nope'>There are no chonks here.</p>
+            <>
+                <div className='title-container'>
+                    <h1 className='explore-title'>{workingLibrary.name}</h1>
+                </div>
+                <div className='outside-grid-album'>
+                    <p className='nope'>There are no chonks here.</p>
+                </div>
+            </>
+
         )
     }
     return (
-        <div className='outside-grid-album'>
-            {workingLibrary.Joins.map((item, idx) => {
-                {console.log('helllllllllo', item.Photo)}
-                return (
-                <figure key={idx}>
-                    <Link to ={`/photos/${item.Photo.id}`}>
-                        <img className='photo-spread' src={item.Photo.url} />
-                    </Link>
-                </figure>)
-            })}
-        </div>
+        <>
+            <div className='title-container'>
+                <h1 className='explore-title'>{workingLibrary.name}</h1>
+            </div>
+            <div className='outside-grid-album'>
+                {workingLibrary.Joins.map((item, idx) => {
+                    return (
+                    <figure key={idx}>
+                        <Link to ={`/photos/${item.Photo.id}`}>
+                            <img className='photo-spread' src={item.Photo.url} />
+                        </Link>
+                    </figure>)
+                })}
+            </div>
+        </>
     )
 }
 
