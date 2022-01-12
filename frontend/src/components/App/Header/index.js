@@ -31,7 +31,7 @@ function HomeHeader() {
 
     return (
         <>
-        <div className='main'>
+        <div className='main-logged'>
             <div className='logo'>
                 <img className='logo-image' src={logo} />
             </div>
