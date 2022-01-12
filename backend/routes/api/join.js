@@ -9,12 +9,27 @@ const router = express.Router()
 
 router.post('/', asyncHandler(async (req, res) => {
     const { photoId, albumId } = req.body
-    const response = await Join.create({
-        photoId,
-        albumId
+
+    const check = await Join.findAll({
+        where: {
+            photoId,
+            albumId
+        }
     })
 
-    res.json(response)
+    console.log('here is your check-----------------------------------------------------------------------',check)
+
+    if(!check.length) {
+        const response = await Join.create({
+            photoId,
+            albumId
+        })
+        res.json(response)
+    } else {
+        res.json({'nope':'nope'})
+    }
+
+
 }))
 
 module.exports = router
