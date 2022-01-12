@@ -27,9 +27,11 @@ function EditPhoto() {
         dateTook = workingPhoto.dateTaken.toString().slice(0, 10)
     }
 
-    const [title, setTitle] = useState(workingPhoto?.title)
+    const [titleLoading, setTitleLoading] = useState(workingPhoto?.title)
+    const [title, setTitle] = useState('')
     const [description, setDescription] = useState(workingPhoto?.description)
     const [dateTaken, setDateTaken] = useState(dateTook)
+
     const [errors, setErrors] = useState([])
 
     useEffect(() => {
@@ -48,13 +50,21 @@ function EditPhoto() {
 
     }, [title, description, dateTaken])
 
+    useEffect(() => {
+        if(!title) {
+            setTitle(workingPhoto?.title)
+        }
+        if(!description) {
+            setDescription(workingPhoto?.description)
+        }
+        if(!dateTaken) {
+            setDateTaken(dateTook)
+        }
+    }, [workingPhoto])
+
     function stringDate(date) {
         return date.slice(0,10)
     }
-
-    // setTimeout(()=> setTitle(workingPhoto?.title), 100)
-    // setTimeout(()=> setDescription(workingPhoto?.description), 100)
-    // setTimeout(()=> setDateTaken(stringDate(workingPhoto?.dateTaken)), 100)
 
 
     const handleEdits = async (e) => {
@@ -89,6 +99,7 @@ function EditPhoto() {
                             type='text'
                             value={title}
                             onChange={ e => setTitle(e.target.value)}
+
                         />
                     </label>
                 </div>
@@ -100,6 +111,7 @@ function EditPhoto() {
                             rows='5'
                             value={description}
                             onChange={ e => setDescription(e.target.value)}
+
                         />
                     </label>
                 </div>
@@ -110,6 +122,7 @@ function EditPhoto() {
                             type='date'
                             value={dateTaken}
                             onChange={ e => setDateTaken(e.target.value)}
+
                         />
                     </label>
                 </div>
