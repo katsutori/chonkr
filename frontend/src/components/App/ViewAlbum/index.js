@@ -1,18 +1,39 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import './ViewAlbum.css'
+import * as sessionActions from '../../../store/session'
 
+import { getUserAlbums } from '../../../store/album';
+
+import './ViewAlbum.css'
 
 function ViewAlbum() {
     const { id } = useParams()
+    console.log(id)
+    const dispatch = useDispatch()
     const albums = useSelector(state => state.albumState.entries)
     const workingLibrary = albums.find(album => album.id === +id)
 
-    // const photoLibrary = workingLibrary.Joins.filter(item => item.Photo)
-    // console.log(photoLibrary)
+    useEffect(() => {
+        dispatch(sessionActions.restore())
+        dispatch(getUserAlbums())
+    }, [dispatch])
 
-    if (!workingLibrary.Joins.length) {
+    if (!workingLibrary) {
+        return (
+            <>
+                <div className='title-container'>
+                    <h1 className='explore-title'>Loading</h1>
+                </div>
+                <div className='outside-grid-album'>
+                    <p className='nope'>There are no chonks here.</p>
+                </div>
+            </>
+        )
+    }
+
+    if (workingLibrary && !workingLibrary.Joins.length) {
         return (
             <>
                 <div className='title-container'>

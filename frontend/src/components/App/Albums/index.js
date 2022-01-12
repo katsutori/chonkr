@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { Link, Redirect, useHistory } from 'react-router-dom'
 import * as sessionActions from '../../../store/session'
 
 import { getUserAlbums } from '../../../store/album'
@@ -10,6 +10,7 @@ import './Albums.css'
 
 function Albums ({albums}) {
     const dispatch = useDispatch()
+    const history = useHistory()
     const sessionUser = useSelector(state => state.session.user)
 
     return (
