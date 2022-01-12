@@ -44,7 +44,7 @@ function HomeApp({way}) {
     }
 
     const choices = photos?.filter(photo => photo.userId === sessionUser.id)
-    console.log(choices)
+
 
     if (way === 'explore') {
         return (

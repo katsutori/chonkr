@@ -10,7 +10,6 @@ import './ViewAlbum.css'
 
 function ViewAlbum() {
     const { id } = useParams()
-    console.log(id)
     const dispatch = useDispatch()
     const albums = useSelector(state => state.albumState.entries)
     const workingLibrary = albums.find(album => album.id === +id)

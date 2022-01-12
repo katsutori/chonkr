@@ -46,7 +46,6 @@ export const getAllPhotos = () => async dispatch => {
 }
 
 export const uploadPhoto = newPhoto => async dispatch => {
-    console.log(newPhoto)
     const response = await csrfFetch(`/api/photos`, {
         method: 'POST',
         body: JSON.stringify(newPhoto)
@@ -60,7 +59,6 @@ export const uploadPhoto = newPhoto => async dispatch => {
 }
 
 export const updatingPhoto = photo => async dispatch => {
-    console.log('here is your photo', photo)
     const response = await csrfFetch(`/api/photos/${photo.id}`, {
         method: 'PATCH',
         body: JSON.stringify(photo)

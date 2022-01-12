@@ -53,7 +53,7 @@ router.post('/', validateUpload, asyncHandler(async (req, res, next) => {
 router.patch('/:id', asyncHandler(async (req, res) => {
     const choicePhoto = await Photo.findByPk(req.params.id)
     const { title, description, dateTaken } = req.body
-    console.log('-------------------', choicePhoto)
+
     if (choicePhoto) {
         await choicePhoto.update({
             title,

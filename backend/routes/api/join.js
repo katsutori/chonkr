@@ -17,8 +17,6 @@ router.post('/', asyncHandler(async (req, res) => {
         }
     })
 
-    console.log('here is your check-----------------------------------------------------------------------',check)
-
     if(!check.length) {
         const response = await Join.create({
             photoId,

@@ -18,7 +18,7 @@ function Albums ({albums}) {
             {albums.map((album, idx) => {
             return (
                 <figure key={idx}>
-                    {console.log('joins', album.Joins)}
+
                     {album?.Joins.length ?
                     <Link to={`/albums/${album.id}`}><img className='photo-spread' src={album.Joins[0].Photo.url}/></Link>
                     :

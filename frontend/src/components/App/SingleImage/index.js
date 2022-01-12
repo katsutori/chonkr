@@ -25,7 +25,7 @@ const PhotoDetail = () => {
 
     const handleDelete = async (e) => {
         e.preventDefault()
-        console.log(single.id)
+
         const deleting = await dispatch(deletedPhoto(single.id))
 
         history.push('/')

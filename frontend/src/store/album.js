@@ -32,7 +32,6 @@ export const getUserAlbums = (id) => async dispatch => {
 
 export const addUserAlbum = (payload) => async dispatch => {
 
-    console.log(payload)
     if(payload.userId) {
         const response = await csrfFetch(`/api/albums`, {
             method: 'POST',
