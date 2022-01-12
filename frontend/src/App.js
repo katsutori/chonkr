@@ -53,6 +53,9 @@ function App() {
           <Route path='/photostream'>
             <HomeApp way={'photostream'} />
           </Route>
+          <Route path='/albums'>
+            <HomeApp way={'albums'} />
+          </Route>
           <Route path='/login'>
             <Redirect to='/' />
           </Route>

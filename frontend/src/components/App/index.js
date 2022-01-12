@@ -4,8 +4,10 @@ import { Redirect, Route, Switch, NavLink, Link } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
 
 import { getAllPhotos } from '../../store/photos'
+import { getUserAlbums } from '../../store/album'
 import HomeHeader from './Header'
 import Explore from './Explore'
+import Albums from './Albums'
 import LoginFormPage from '../LoginFormPage'
 import Footer from '../Footer'
 
@@ -16,10 +18,19 @@ function HomeApp({way}) {
     const dispatch = useDispatch()
     const sessionUser = useSelector(state => state.session.user)
     const photos = useSelector(state => state.photoState.entries)
+    const albums = useSelector(state => state.albumState.entries)
+    const id = sessionUser.id
 
     useEffect(() => {
+        dispatch(sessionActions.restore())
         dispatch(getAllPhotos())
+
     }, [dispatch])
+
+
+    useEffect(() => {
+        dispatch(getUserAlbums(id))
+    }, [photos])
 
 
     // if(!sessionUser) return (
@@ -55,6 +66,17 @@ function HomeApp({way}) {
                     <h1 className='explore-title'>My Photostream</h1>
                 </div>
                 <Explore photos={choices} style='photostream-caption'/>
+            </div>
+        )
+    }
+
+    if (way === 'albums') {
+        return (
+            <div className='logged-home'>
+                <div className='title-container'>
+                    <h1 className='explore-title'>My Albums</h1>
+                </div>
+                <Albums albums={albums} />
             </div>
         )
     }

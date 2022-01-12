@@ -38,7 +38,7 @@ function HomeHeader() {
             <div className='nav-bar'>
                 <NavLink className='nav-bar-links' to="/" >Explore</NavLink>
                 <NavLink className='nav-bar-links' to='/photostream'>My Photostream</NavLink>
-                <NavLink className='nav-bar-links' to='/'>Albums</NavLink>
+                <NavLink className='nav-bar-links' to='/albums'>Albums</NavLink>
                 <a className='nav-bar-links' href='https://github.com/katsutori/chonkr' target='blank'>GitHub Repo</a>
                 <a className='nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>LinkedIn</a>
             </div>
@@ -54,7 +54,7 @@ function HomeHeader() {
             <div className='drop-button'>
                 <NavLink className='res-nav-bar-links' to="/" >Explore</NavLink>
                 <NavLink className='res-nav-bar-links' to='/photostream'>My Photostream</NavLink>
-                <NavLink className='res-nav-bar-links' to='/'>Albums</NavLink>
+                <NavLink className='res-nav-bar-links' to='/albums'>Albums</NavLink>
                 <a className='res-nav-bar-links' href='https://github.com/katsutori/chonkr' target='blank'>GitHub Repo</a>
                 <a className='res-nav-bar-links' href='https://www.linkedin.com/in/thien-dang-ct' target='blank'>LinkedIn</a>
             </div>
