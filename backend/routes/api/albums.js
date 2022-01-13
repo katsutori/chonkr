@@ -32,4 +32,12 @@ router.post('/', asyncHandler(async (req, res) => {
 
 }))
 
+router.delete('/:id', asyncHandler(async (req, res) => {
+    const removed = await Album.findByPk(req.params.id)
+    if (removed) {
+        await removed.destroy()
+    }
+    return res.json(removed)
+}))
+
 module.exports = router

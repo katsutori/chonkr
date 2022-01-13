@@ -6,6 +6,7 @@ import * as sessionActions from '../../../store/session'
 
 import { getAllPhotos } from '../../../store/photos'
 import { updatingPhoto } from '../../../store/photos'
+import favicon from '../../../img/favicon.png'
 import './EditPhoto.css'
 
 function EditPhoto({albums}) {
@@ -109,6 +110,7 @@ function EditPhoto({albums}) {
     return (
         <div className='edit-form-main'>
             <form className='edit-form' onSubmit={handleEdits}>
+                <div className='login-logo'><img src={favicon}/></div>
                 <p className='edit-title'>Edit Your Chonkr</p>
                 <div className='label-container'>
                     <label>

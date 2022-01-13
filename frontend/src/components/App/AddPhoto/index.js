@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom'
 import { uploadPhoto } from '../../../store/photos'
 import { addJoin } from '../../../store/join'
+import favicon from '../../../img/favicon.png'
 import * as sessionActions from '../../../store/session'
 
 import './AddPhoto.css'
@@ -78,69 +79,70 @@ function AddPhoto({albums}) {
     return (
         <div className='upload-form-main'>
             <form className='login-form' onSubmit={handleUpload}>
-            <p className='upload-title'>Upload Your Chonkr</p>
-                <div className='label-container'>
-                    <label>
-                        <input
-                            className='upload-label'
-                            type='text'
-                            value={title}
-                            onChange={ e => setTitle(e.target.value)}
-                            required
-                            placeholder='Title'
-                        />
-                    </label>
-                </div>
-                <div className='label-container'>
-                    <label>
-                        <input
-                            className='upload-label'
-                            type='text'
-                            value={url}
-                            onChange={ e => setUrl(e.target.value)}
-                            required
-                            placeholder='Photo URL'
-                        />
-                    </label>
-                </div>
-                <div className='label-container'>
-                    <label>
-                        <input
-                            className='upload-label'
-                            type='text'
-                            value={description}
-                            onChange={ e => setDescription(e.target.value)}
-                            required
-                            placeholder='Photo description'
-                        />
-                    </label>
-                </div>
-                <div className='label-container'>
-                    <label className='upload-label-area'> Date Taken
-                        <input
-                            className='upload-label upload-label-area-input'
-                            type='date'
-                            value={dateTaken}
-                            onChange={ e => setDateTaken(e.target.value)}
-                        />
-                    </label>
-                </div>
-                {albums.length? <div className='label-container'>
-                    <select className='album-select' value={albumId} onChange={ e => setAlbumId(e.target.value)}>
-                        <option className='upload-label-area album-option' value=''>Choose an album</option>
-                        {albums?.map(album => <option className='upload-label-area album-option' key={album.id} value={album.id}>{album.name}</option>)}
-                    </select>
-                </div>:<></>}
-                <div className='upload-photo'>
-                    <button type='submit'>Upload</button>
-                </div>
-                <div className='upload-photo'>
-                    <Link className='upload-cancel' to='/'>Cancel</Link>
-                </div>
+                <div className='login-logo'><img src={favicon}/></div>
+                <p className='upload-title'>Upload Your Chonkr</p>
+                    <div className='label-container'>
+                        <label>
+                            <input
+                                className='upload-label'
+                                type='text'
+                                value={title}
+                                onChange={ e => setTitle(e.target.value)}
+                                required
+                                placeholder='Title'
+                            />
+                        </label>
+                    </div>
+                    <div className='label-container'>
+                        <label>
+                            <input
+                                className='upload-label'
+                                type='text'
+                                value={url}
+                                onChange={ e => setUrl(e.target.value)}
+                                required
+                                placeholder='Photo URL'
+                            />
+                        </label>
+                    </div>
+                    <div className='label-container'>
+                        <label>
+                            <input
+                                className='upload-label'
+                                type='text'
+                                value={description}
+                                onChange={ e => setDescription(e.target.value)}
+                                required
+                                placeholder='Photo description'
+                            />
+                        </label>
+                    </div>
+                    <div className='label-container'>
+                        <label className='upload-label-area'> Date Taken
+                            <input
+                                className='upload-label upload-label-area-input'
+                                type='date'
+                                value={dateTaken}
+                                onChange={ e => setDateTaken(e.target.value)}
+                            />
+                        </label>
+                    </div>
+                    {albums.length? <div className='label-container'>
+                        <select className='album-select' value={albumId} onChange={ e => setAlbumId(e.target.value)}>
+                            <option className='upload-label-area album-option' value=''>Choose an album</option>
+                            {albums?.map(album => <option className='upload-label-area album-option' key={album.id} value={album.id}>{album.name}</option>)}
+                        </select>
+                    </div>:<></>}
+                    <div className='upload-photo'>
+                        <button type='submit'>Upload</button>
+                    </div>
+                    <div className='upload-photo'>
+                        <Link className='upload-cancel' to='/'>Cancel</Link>
+                    </div>
 
-                <ul>
-                    {errors.map((error, i) => <li key={i}>{error}</li>)}
-                </ul>
+                    <ul>
+                        {errors.map((error, i) => <li key={i}>{error}</li>)}
+                    </ul>
             </form>
         </div>
     )
