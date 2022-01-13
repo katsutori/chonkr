@@ -17,6 +17,16 @@ function AddAlbum() {
         dispatch(sessionActions.restore())
     }, [dispatch])
 
+    useEffect(() => {
+        let errs = []
+
+        if(!name) {
+            errs.push('You need an album name!')
+        }
+
+        setErrors(errs)
+    }, [name])
+
     const handleNewAlbum = async (e) => {
         e.preventDefault()
 
@@ -29,7 +39,7 @@ function AddAlbum() {
 
         const album = await dispatch(addUserAlbum(payload))
         if(album) {
-            history.push('/')
+            history.push('/albums')
         }
     }
 
