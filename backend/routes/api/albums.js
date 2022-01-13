@@ -33,7 +33,6 @@ router.post('/', asyncHandler(async (req, res) => {
 }))
 
 router.patch('/:id', asyncHandler(async (req, res) => {
-    console.log('---------------------------------------------------')
     const choiceAlbum = await Album.findByPk(req.params.id)
     const { name } = req.body
 
