@@ -32,6 +32,19 @@ router.post('/', asyncHandler(async (req, res) => {
 
 }))
 
+router.patch('/:id', asyncHandler(async (req, res) => {
+    const choiceAlbum = await Album.findByPk(req.params.id)
+    const { name } = req.body
+
+    if (choiceAlbum) {
+        await choiceAlbum.update({
+            name
+        })
+    }
+    const updatedAlbum = await Album.findByPk(req.params.id)
+    return res.json(updatedAlbum)
+}))
+
 router.delete('/:id', asyncHandler(async (req, res) => {
     const removed = await Album.findByPk(req.params.id)
     if (removed) {
