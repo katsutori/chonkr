@@ -26,7 +26,7 @@ function ViewAlbum() {
                     <h1 className='explore-title'>Loading</h1>
                 </div>
                 <div className='outside-grid-album'>
-                    <p className='nope'>There are no chonks here.</p>
+                    <p className='nope'>No chonks here.</p>
                 </div>
             </>
         )
