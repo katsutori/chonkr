@@ -62,11 +62,13 @@ export const addUserAlbum = (payload) => async dispatch => {
 }
 
 export const updatingAlbum = album => async dispatch => {
-    const response = await csrfFetch(`/api/photos/${album.id}`, {
+
+    console.log('heeeeeeeeeeeeeeeeelo', album)
+    const response = await csrfFetch(`/api/albums/${album.id}`, {
         method: 'PATCH',
         body: JSON.stringify(album)
     })
-
+    console.log('Reeeeeeeeeeeeeeeeesponse', response)
     if(response.ok) {
         const updatedAlbum = await response.json()
         dispatch(updateAlbum(updatedAlbum))

@@ -12,6 +12,7 @@ import AddPhoto from './components/App/AddPhoto';
 import AddAlbum from './components/App/AddAlbum';
 import PhotoDetail from './components/App/SingleImage';
 import EditPhoto from './components/App/EditPhoto';
+import EditAlbum from './components/App/EditAlbum';
 import ViewAlbum from './components/App/ViewAlbum';
 import Footer from './components/Footer';
 import * as sessionActions from './store/session'
@@ -76,6 +77,9 @@ function App() {
           </Route>
           <Route exact path='/albums/:id'>
             <ViewAlbum />
+          </Route>
+          <Route exact path='/albums/:id/edit'>
+              <EditAlbum albums={albums}/>
           </Route>
           <Route path='/login'>
             <Redirect to='/' />

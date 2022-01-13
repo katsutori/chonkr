@@ -7,6 +7,7 @@ import * as sessionActions from '../../../store/session'
 import { getUserAlbums, deletedAlbum } from '../../../store/album';
 
 import incineration from '../../../img/incineration.png'
+import edit from '../../../img/edit.png'
 import './ViewAlbum.css'
 
 function ViewAlbum() {
@@ -46,6 +47,7 @@ function ViewAlbum() {
                 <div className='title-container-view-album'>
                     <h1 className='explore-title'>{workingLibrary.name}</h1>
                     <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
+                    <Link className='add-album delete-album' to={`/albums/${id}/edit`}><img src={edit}/></Link>
                 </div>
                 <div className='outside-grid-album'>
                     <p className='nope'>No chonks here.</p>
@@ -59,6 +61,7 @@ function ViewAlbum() {
             <div className='title-container-view-album'>
                 <h1 className='explore-title'>{workingLibrary.name}</h1>
                 <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
+                <Link className='add-album delete-album' to={`/albums/${id}/edit`}><img src={edit}/></Link>
             </div>
             <div className='outside-grid-album'>
                 {workingLibrary.Joins.map((item, idx) => {
