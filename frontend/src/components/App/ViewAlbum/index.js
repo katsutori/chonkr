@@ -1,16 +1,18 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useHistory } from 'react-router-dom';
 import * as sessionActions from '../../../store/session'
 
-import { getUserAlbums } from '../../../store/album';
+import { getUserAlbums, deletedAlbum } from '../../../store/album';
 
+import incineration from '../../../img/incineration.png'
 import './ViewAlbum.css'
 
 function ViewAlbum() {
     const { id } = useParams()
     const dispatch = useDispatch()
+    const history = useHistory()
     const albums = useSelector(state => state.albumState.entries)
     const workingLibrary = albums.find(album => album.id === +id)
 
@@ -18,6 +20,12 @@ function ViewAlbum() {
         dispatch(sessionActions.restore())
         dispatch(getUserAlbums())
     }, [dispatch])
+
+    const handleDelete = (e) => {
+        e.preventDefault()
+        dispatch(deletedAlbum(id))
+        history.push('/albums')
+    }
 
     if (!workingLibrary) {
         return (
@@ -35,11 +43,12 @@ function ViewAlbum() {
     if (workingLibrary && !workingLibrary.Joins.length) {
         return (
             <>
-                <div className='title-container'>
+                <div className='title-container-view-album'>
                     <h1 className='explore-title'>{workingLibrary.name}</h1>
+                    <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
                 </div>
                 <div className='outside-grid-album'>
-                    <p className='nope'>There are no chonks here.</p>
+                    <p className='nope'>No chonks here.</p>
                 </div>
             </>
 
@@ -49,6 +58,7 @@ function ViewAlbum() {
         <>
             <div className='title-container'>
                 <h1 className='explore-title'>{workingLibrary.name}</h1>
+                <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
             </div>
             <div className='outside-grid-album'>
                 {workingLibrary.Joins.map((item, idx) => {
