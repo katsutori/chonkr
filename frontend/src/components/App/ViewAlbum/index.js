@@ -30,7 +30,7 @@ function ViewAlbum() {
     if (!workingLibrary) {
         return (
             <>
-                <div className='title-container'>
+                <div className='title-container-view-album'>
                     <h1 className='explore-title'>Loading</h1>
                 </div>
                 <div className='outside-grid-album'>
@@ -56,7 +56,7 @@ function ViewAlbum() {
     }
     return (
         <>
-            <div className='title-container'>
+            <div className='title-container-view-album'>
                 <h1 className='explore-title'>{workingLibrary.name}</h1>
                 <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
             </div>
