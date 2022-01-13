@@ -47,7 +47,7 @@ function ViewAlbum() {
                 <div className='title-container-view-album'>
                     <h1 className='explore-title'>{workingLibrary.name}</h1>
                     <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
-                    <Link className='add-album delete-album' to={`/albums/${id}/edit`}><img src={edit}/></Link>
+                    <Link className='add-album delete-album edit-album' to={`/albums/${id}/edit`}><img src={edit}/></Link>
                 </div>
                 <div className='outside-grid-album'>
                     <p className='nope'>No chonks here.</p>
@@ -61,7 +61,7 @@ function ViewAlbum() {
             <div className='title-container-view-album'>
                 <h1 className='explore-title'>{workingLibrary.name}</h1>
                 <span className='add-album delete-album' onClick={handleDelete}><img src={incineration}/></span>
-                <Link className='add-album delete-album' to={`/albums/${id}/edit`}><img src={edit}/></Link>
+                <Link className='add-album delete-album edit-album' to={`/albums/${id}/edit`}><img src={edit}/></Link>
             </div>
             <div className='outside-grid-album'>
                 {workingLibrary.Joins.map((item, idx) => {

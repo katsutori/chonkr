@@ -12,3 +12,7 @@
 .delete-album {
     cursor: pointer;
 }
+
+.edit-album {
+    margin-left: 10px;
+}
