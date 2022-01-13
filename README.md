@@ -36,7 +36,7 @@ This is a chonky clone of [Flickr](https://www.flickr.com/). Access the [Chonkr 
 
 6. Add the following proxy to your package.json file within your frontend directory, replacing or keeping the 5000 port to match your PORT configuration found in your .env file.
 
-    8 ```"proxy": "http://localhost:5000"```
+    * ```"proxy": "http://localhost:5000"```
 
 7. Create Database, Migrate, and Seed models.
 
